@@ -1,0 +1,12 @@
+.globe{
+    fill:rgb(27, 124, 148);
+    stroke:black;
+    stroke-width: .7px;
+}
+path.country {
+    stroke: rgb(91, 92, 94);
+    fill: rgb(5, 24, 36);
+}
+svg{
+    background-image: linear-gradient(to right bottom, #050c16, #050913, #04060f, #03040a, #010104);
+}
