@@ -16,7 +16,7 @@ var T = new Twit({
   strictSSL:true,     // optional - requires SSL certificates to be valid.
 })
 
-var stream = T.stream('statuses/filter', { track: 'algeria' });
+var stream = T.stream('statuses/filter', { track: 'fr' });
 
 // when connection send hello and receive response
 io.on('connection', function (socket) {
@@ -27,6 +27,8 @@ io.on('connection', function (socket) {
 });
 // send stream of tweets
 stream.on('tweet', function (tweet) {
-    console.log(tweet);
-      io.emit('tweet',tweet); 
+  var text = tweet.extended_tweet;
+  if(text){
+    io.emit('tweet',text.full_text); 
+  }
 });
